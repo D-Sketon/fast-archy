@@ -1,6 +1,7 @@
 import { bench, group, run, summary } from "mitata";
 import archyFast from "./index";
 import archy from "archy";
+import routes from "./fixtures.json";
 
 const beepNodeSmall = {
   label: "beep",
@@ -91,6 +92,20 @@ summary(() => {
 
     bench("archy (ascii)", () => {
       archy(beepNodeMedium, "", { unicode: false });
+    }).gc("inner");
+  });
+});
+
+summary(() => {
+  const beepHexo = {
+    label: `Total: ${routes.length}`,
+    nodes: routes,
+  };
+  group("archy - beepHexo", () => {
+    bench("fast-archy", () => archyFast(beepHexo)).gc("inner");
+
+    bench("archy", () => {
+      archy(beepHexo);
     }).gc("inner");
   });
 });

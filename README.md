@@ -76,67 +76,81 @@ beep
 ## Benchmarks
 
 ```
-clk: ~4.03 GHz
+clk: ~4.09 GHz
 cpu: 13th Gen Intel(R) Core(TM) i5-13400F
-runtime: node 24.1.0 (x64-win32)
+runtime: node 24.8.0 (x64-win32)
 
 benchmark                   avg (min … max) p75 / p99    (min … top 1%)
 ------------------------------------------- -------------------------------
 • archy - simple tree
 ------------------------------------------- -------------------------------
-fast-archy                   184.88 ns/iter 185.82 ns  █▂
-                    (174.24 ns … 327.10 ns) 249.10 ns ▃██▅▅▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁
-                  gc(  1.43 ms …   4.21 ms) 412.22  b (138.33  b…812.80  b)
+fast-archy                   195.44 ns/iter 198.27 ns   █
+                    (182.32 ns … 246.92 ns) 240.23 ns ▂▆██▄▄▄▃▁▁▂▂▁▁▁▂▁▁▂▁▁
+                  gc(  1.72 ms …   5.42 ms) 431.98  b (148.50  b…817.90  b)
 
-archy                        739.96 ns/iter 739.09 ns  █
-                      (714.04 ns … 1.26 µs) 914.82 ns ▆██▅▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-                  gc(  1.47 ms …   3.67 ms)   1.88 kb (  1.84 kb…  2.40 kb)
+archy                        719.36 ns/iter 723.93 ns    ▆█
+                      (648.58 ns … 1.01 µs) 995.53 ns ▁▂▁██▇▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+                  gc(  1.81 ms …   4.36 ms)   1.88 kb (  1.45 kb…  2.35 kb)
 
 summary
   fast-archy
-   4x faster than archy
+   3.68x faster than archy
 
 • archy - medium tree
 ------------------------------------------- -------------------------------
-fast-archy                     1.33 µs/iter   1.33 µs  ▆█
-                        (1.30 µs … 1.62 µs)   1.52 µs ▃██▇▆▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
-                  gc(  1.48 ms …   3.35 ms)   2.44 kb (  2.42 kb…  3.38 kb)
+fast-archy                     1.32 µs/iter   1.37 µs  ▅         █ ▄       
+                        (1.23 µs … 1.47 µs)   1.44 µs ▄█▆▅▆▃▄▄▃▁████▆▄▃▂▂▂▂
+                  gc(  1.80 ms …   2.49 ms)   2.44 kb (  2.42 kb…  3.36 kb)
 
-archy                          3.84 µs/iter   3.89 µs           ▄█
-                        (3.52 µs … 4.39 µs)   4.09 µs ▂▁▁▁▂▄▂▂▄▂██▇▇█▂▂▁▂▁▂
-                  gc(  1.76 ms …   2.89 ms)   8.47 kb (  7.81 kb…  8.49 kb)
+archy                          3.45 µs/iter   3.59 µs   ▅█
+                        (3.25 µs … 3.84 µs)   3.82 µs ▂▆██▆▇▄▆▆▃▁▃█▆▁█▂▁▂▁▂
+                  gc(  1.91 ms …   2.55 ms)   8.40 kb (  7.74 kb…  8.42 kb)
 
 summary
   fast-archy
-   2.89x faster than archy
+   2.61x faster than archy
 
 • archy - complex tree
 ------------------------------------------- -------------------------------
-fast-archy                   744.95 µs/iter 749.10 µs  ▆▇█
-                    (718.30 µs … 989.60 µs) 854.40 µs ▄████▆▄▃▄▂▂▂▁▂▁▁▁▁▁▁▁
-                  gc(  1.46 ms …   2.12 ms)   1.39 mb (  1.13 mb…  2.09 mb)
+fast-archy                   755.84 µs/iter 758.30 µs  ██
+                      (720.30 µs … 1.04 ms) 949.80 µs ▅███▄▃▂▃▁▂▁▁▁▁▁▁▁▁▁▁▁
+                  gc(  1.75 ms …   2.82 ms)   1.40 mb (  1.12 mb…  2.06 mb)
 
-archy                          1.42 ms/iter   1.42 ms  ▆█▅▃
-                        (1.33 ms … 2.29 ms)   1.81 ms ▃████▃▂▃▁▂▂▁▁▁▁▁▁▁▁▁▁
-                  gc(  1.53 ms …   2.47 ms)   3.20 mb (  2.85 mb…  4.34 mb)
+archy                          1.41 ms/iter   1.41 ms  ▇█▆
+                        (1.34 ms … 2.05 ms)   1.72 ms ▅███▇▄▄▃▂▂▁▁▁▁▁▁▁▂▁▂▁
+                  gc(  1.82 ms …   2.71 ms)   3.20 mb (  2.18 mb…  4.69 mb)
 
 summary
   fast-archy
-   1.9x faster than archy
+   1.86x faster than archy
 
 • archy - ascii mode
 ------------------------------------------- -------------------------------
-fast-archy (ascii)           876.87 ns/iter 879.76 ns  ▄▅█▄
-                      (851.05 ns … 1.28 µs) 950.17 ns ▂████▅▅▃▅▃▃▁▂▃▁▁▂▂▁▁▁
-                  gc(  1.49 ms …   3.16 ms)   2.12 kb (  2.07 kb…  3.26 kb)
+fast-archy (ascii)           865.90 ns/iter 879.13 ns        ▃█▂
+                      (791.55 ns … 1.01 µs) 972.95 ns ▂▆▄▂▂▂▁███▇▂▄▃▂▂▂▂▁▁▁
+                  gc(  1.79 ms …   3.34 ms)   2.12 kb (  2.06 kb…  3.25 kb)
 
-archy (ascii)                  2.98 µs/iter   3.00 µs              █▄█
-                        (2.79 µs … 3.06 µs)   3.06 µs ▂▁▂▁▁▁▃▁▂▁▂▃█████▄▃▂▂
-                  gc(  1.66 ms …   3.01 ms)   8.60 kb (  8.57 kb…  9.82 kb)
+archy (ascii)                  2.66 µs/iter   2.76 µs  ▃▂█▆         ▆
+                        (2.50 µs … 2.89 µs)   2.88 µs ▂████▅▂▇▄▅▂▅▄██▇▄▅▁▄▂
+                  gc(  1.91 ms …   4.22 ms)   8.53 kb (  8.48 kb…  9.63 kb)
 
 summary
   fast-archy (ascii)
-   3.4x faster than archy (ascii)
+   3.07x faster than archy (ascii)
+
+• archy - beepHexo
+------------------------------------------- -------------------------------
+fast-archy                     4.56 ms/iter   4.63 ms          █▆
+                        (4.13 ms … 5.11 ms)   5.04 ms ▁▅▂▃▁▂▁▂▂██▇▆▃▃▃▃▁▁▁▁
+                  gc(  1.83 ms …   3.64 ms)  10.19 mb (  9.93 mb… 10.19 mb)
+
+archy                         11.21 ms/iter  11.60 ms  ▄▅▄▂       ▂█ ▇
+                      (10.47 ms … 12.66 ms)  12.20 ms ▇█████▄▄▃▄▃▇██▄█▄▆▄▁▃
+                  gc(  2.01 ms …   3.18 ms)  29.90 mb ( 29.90 mb… 29.90 mb)
+
+summary
+  fast-archy
+   2.46x faster than archy
 ```
 
 ## License
