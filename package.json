@@ -34,14 +34,14 @@
   "description": "render nested hierarchies `npm ls` style with unicode pipes",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.4",
+    "@rollup/plugin-typescript": "^12.3.0",
     "archy": "^1.0.0",
     "mitata": "^1.0.34",
-    "rollup": "^4.50.0",
+    "rollup": "^4.53.3",
     "tslib": "^2.8.1",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
   },
   "repository": {
     "type": "git",

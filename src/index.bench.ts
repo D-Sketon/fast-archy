@@ -52,11 +52,15 @@ summary(() => {
   group("archy - simple tree", () => {
     bench("fast-archy", () => {
       archyFast(beepNodeSmall);
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
 
     bench("archy", () => {
       archy(beepNodeSmall);
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
   });
 });
 
@@ -64,11 +68,15 @@ summary(() => {
   group("archy - medium tree", () => {
     bench("fast-archy", () => {
       archyFast(beepNodeMedium);
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
 
     bench("archy", () => {
       archy(beepNodeMedium);
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
   });
 });
 
@@ -76,11 +84,15 @@ summary(() => {
   group("archy - complex tree", () => {
     bench("fast-archy", () => {
       archyFast(beepNodeLarge);
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
 
     bench("archy", () => {
       archy(beepNodeLarge);
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
   });
 });
 
@@ -88,11 +100,15 @@ summary(() => {
   group("archy - ascii mode", () => {
     bench("fast-archy (ascii)", () => {
       archyFast(beepNodeMedium, "", { unicode: false });
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
 
     bench("archy (ascii)", () => {
       archy(beepNodeMedium, "", { unicode: false });
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
   });
 });
 
@@ -102,11 +118,15 @@ summary(() => {
     nodes: routes,
   };
   group("archy - beepHexo", () => {
-    bench("fast-archy", () => archyFast(beepHexo)).gc("inner");
+    bench("fast-archy", () => archyFast(beepHexo))
+      .gc("inner")
+      .compact();
 
     bench("archy", () => {
       archy(beepHexo);
-    }).gc("inner");
+    })
+      .gc("inner")
+      .compact();
   });
 });
 
