@@ -1,6 +1,6 @@
 {
   "name": "fast-archy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -33,15 +33,19 @@
   "license": "MIT",
   "description": "render nested hierarchies `npm ls` style with unicode pipes",
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-terser": "^1.0.0",
     "@rollup/plugin-typescript": "^12.3.0",
     "archy": "^1.0.0",
     "mitata": "^1.0.34",
-    "rollup": "^4.53.3",
+    "rollup": "^4.62.2",
     "tslib": "^2.8.1",
-    "tsx": "^4.20.6",
+    "tsx": "^4.23.1",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.14"
+    "vitest": "^4.1.10"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
   },
   "repository": {
     "type": "git",

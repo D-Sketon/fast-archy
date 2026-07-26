@@ -21,4 +21,3 @@ export default [
     plugins: [typescript({ module: "ESNext" })]
   }
 ]
-

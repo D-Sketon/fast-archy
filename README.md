@@ -76,16 +76,16 @@ beep
 ## Benchmarks
 
 ```
-clk: ~4.06 GHz
+clk: ~3.91 GHz
 cpu: 13th Gen Intel(R) Core(TM) i5-13400F
-runtime: node 24.11.1 (x64-win32)
+runtime: node 26.5.0 (x64-win32)
 
 benchmark                   avg (min … max) p75 / p99    (min … top 1%)
 ------------------------------------------- -------------------------------
 • archy - simple tree
 ------------------------------------------- -------------------------------
-fast-archy                   187.91 ns/iter 190.82 ns 247.75 ns ▄█▇▃▂▁▁▁▁▁▁
-archy                        757.33 ns/iter 759.81 ns   1.03 µs ██▃▂▁▁▁▁▁▁▁
+fast-archy                   113.96 ns/iter 116.77 ns 147.29 ns ▄██▅▃▃▂▁▁▁▁
+archy                        458.72 ns/iter 452.59 ns 733.96 ns █▇▂▂▁▁▁▁▁▁▁
 
 summary
   fast-archy
@@ -93,39 +93,39 @@ summary
 
 • archy - medium tree
 ------------------------------------------- -------------------------------
-fast-archy                     1.40 µs/iter   1.41 µs   1.52 µs ▃█▆▅▄▂▂▁▂▁▁
-archy                          3.75 µs/iter   3.78 µs   3.88 µs ▁▁▂▂▅█▅▃▄▁▂
+fast-archy                   465.74 ns/iter 468.70 ns 619.04 ns ▃█▅▂▁▂▁▁▁▁▁
+archy                          2.73 µs/iter   2.76 µs   3.17 µs ▂▆██▄▁▂▁▁▁▁
 
 summary
   fast-archy
-   2.68x faster than archy
+   5.87x faster than archy
 
 • archy - complex tree
 ------------------------------------------- -------------------------------
-fast-archy                   773.27 µs/iter 783.20 µs   1.03 ms ▆█▅▂▁▁▁▁▁▁▁
-archy                          1.46 ms/iter   1.47 ms   1.76 ms ▃█▆▃▂▂▂▁▁▁▁
+fast-archy                   472.15 µs/iter 476.20 µs 717.20 µs ▆█▇▂▁▁▁▁▁▁▁
+archy                          1.29 ms/iter   1.29 ms   1.68 ms ▁▃█▃▂▁▁▁▁▁▁
 
 summary
   fast-archy
-   1.89x faster than archy
+   2.73x faster than archy
 
 • archy - ascii mode
 ------------------------------------------- -------------------------------
-fast-archy (ascii)           910.90 ns/iter 920.92 ns 963.65 ns ▃▅█▆▄▃▃▂▂▁▁
-archy (ascii)                  2.82 µs/iter   2.84 µs   2.92 µs ▁▁▁▂▂▆█▆▃▂▂
+fast-archy (ascii)           440.13 ns/iter 440.60 ns 693.73 ns ▄█▂▂▁▁▁▁▁▁▁
+archy (ascii)                  3.02 µs/iter   3.06 µs   3.16 µs ▁▁▃▄▃▄█▄▃▂▂
 
 summary
   fast-archy (ascii)
-   3.1x faster than archy (ascii)
+   6.87x faster than archy (ascii)
 
 • archy - beepHexo
 ------------------------------------------- -------------------------------
-fast-archy                     4.73 ms/iter   4.76 ms   5.02 ms ▄▇█▅▄▂▃▂▂▂▁
-archy                         11.80 ms/iter  11.98 ms  12.34 ms ▁▂▁▁▁▃█▄▄▂▁
+fast-archy                     1.32 ms/iter   1.32 ms   2.20 ms ▇█▂▁▁▁▁▁▁▁▁
+archy                         10.07 ms/iter  10.15 ms  13.73 ms ▃█▆▂▂▁▁▁▁▁▁
 
 summary
   fast-archy
-   2.49x faster than archy
+   7.64x faster than archy
 ```
 
 ## License

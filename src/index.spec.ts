@@ -225,6 +225,17 @@ describe("archy", () => {
     expect(s).toBe(["  root", "  └── child", ""].join("\n"));
   });
 
+  it("custom prefix with multi-line root label", () => {
+    const s = archy(
+      {
+        label: "root\nline2",
+        nodes: ["child"],
+      },
+      "  "
+    );
+    expect(s).toBe(["  root", "  │ line2", "  └── child", ""].join("\n"));
+  });
+
   it("multi-line leaf node", () => {
     const s = archy({
       label: "root",
@@ -273,6 +284,62 @@ describe("archy", () => {
     });
     expect(s).toBe(
       ["level1", "└─┬ level2", "  └─┬ level3", "    └── level4", ""].join("\n")
+    );
+  });
+
+  it("custom prefix with multi-line leaf child", () => {
+    const s = archy(
+      {
+        label: "root",
+        nodes: ["line1\nline2"],
+      },
+      "  "
+    );
+    expect(s).toBe(
+      ["  root", "  └── line1", "      line2", ""].join("\n")
+    );
+  });
+
+  it("custom prefix with multi-line object child", () => {
+    const s = archy(
+      {
+        label: "root",
+        nodes: [{ label: "child\nchild2", nodes: ["grandchild"] }],
+      },
+      "  "
+    );
+    expect(s).toBe(
+      [
+        "  root",
+        "  └─┬ child",
+        "    │ child2",
+        "    └── grandchild",
+        "",
+      ].join("\n")
+    );
+  });
+
+  it("non-last child multi-line leaf", () => {
+    const s = archy({
+      label: "root",
+      nodes: ["a\nb", "c"],
+    });
+    expect(s).toBe(
+      ["root", "├── a", "│   b", "└── c", ""].join("\n")
+    );
+  });
+
+  it("ascii mode with multi-line root and custom prefix", () => {
+    const s = archy(
+      {
+        label: "root\nline2",
+        nodes: ["child"],
+      },
+      "  ",
+      { unicode: false }
+    );
+    expect(s).toBe(
+      ["  root", "  | line2", "  `-- child", ""].join("\n")
     );
   });
 });
